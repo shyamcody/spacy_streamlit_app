@@ -10,6 +10,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import spacy
+import spacy.cli
 from spacy import displacy
 import base64
 
@@ -23,8 +24,10 @@ st.title("streamlit-based spacy interactive app")
 st.subheader("putting some buttons")
 
 if st.button("choose big model"):
+    spacy.cli.download("en_core_web_lg",'--no-deps')
     nlp = spacy.load("en_core_web_lg")
 else:
+    spacy.cli.download("en_core_web_sm",'--no-deps')
     nlp = spacy.load("en_core_web_sm")
 
 st.subheader("trying out checkbox")
