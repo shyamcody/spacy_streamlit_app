@@ -13,7 +13,7 @@ import numpy as np
 import spacy
 from spacy import displacy
 import base64
-
+from streamlit import components
 def render_svg(svg):
     """Renders the given svg string."""
     b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
