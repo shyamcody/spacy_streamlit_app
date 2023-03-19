@@ -71,3 +71,7 @@ if radio == "pos tagging":
         text = str(token.text)
         position = str(token.pos_)
         st.write(text,position)
+HtmlFile = open('test.html', 'r', encoding='utf-8')
+source_code = HtmlFile.read()
+print(source_code)
+components.html(source_code, height=600)
